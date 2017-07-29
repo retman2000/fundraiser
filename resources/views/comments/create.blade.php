@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-primary">
-                <div class="panel-heading">Add New Comment | fundraiser_id:{{session('fundraiser_id')}}</div>
+                <div class="panel-heading">Add New Comment</div>
             		@if(count($errors) > 0)
         				<div class="alert alert-danger">
             				@foreach($errors as $error)

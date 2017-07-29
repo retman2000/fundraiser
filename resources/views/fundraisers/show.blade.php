@@ -28,9 +28,8 @@
                 		@if(count($comments) > 0)
                 			@foreach($comments as $comment)
                 				<ul class="list-group">
-                					<li class="list-group-item">User: {{$comment->user_id}}</li>
-                					<li class="list-group-item">{{$comment->comment}}</li>
-                					<li class="list-group-item">Rating: {{$comment->rating}}</li>
+                					<li class="list-group-item"><strong>{{$comment->user->name}}:</strong> {{$comment->comment}}</li>
+                					<li class="list-group-item"><strong>Rating:</strong> {{$comment->rating}}</li>
             					</ul>                				
                 			@endforeach
                 		@else

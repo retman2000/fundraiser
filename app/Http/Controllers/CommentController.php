@@ -37,15 +37,15 @@ class CommentController extends Controller
      */
     public function create()
     {
+        $errors = [];
         // if current user has already left a comment return msg stating such
         $comment_exists = DB::table('comments')->where([['user_id', Auth::user()->id], ['fundraiser_id', session('fundraiser_id')]])->count();
-//die("exists: $comment_exists");
+
         if($comment_exists) {
             $errors[] = 'You can only leave one comment per fundraiser.';
         }
-//die(print_r($errors));
         
-            return view('comments.create')->with('errors', $errors);
+        return view('comments.create')->with('errors', $errors);
     }
 
     /**
@@ -98,7 +98,6 @@ class CommentController extends Controller
      */
     public function show($id)
     {
-        //session(['fundraiser_id' => $id]);
         $comments = Comment::findOrFail($id);
 
         return view('comments.show')->with('comments', $comments);

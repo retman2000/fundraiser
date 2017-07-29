@@ -61,7 +61,7 @@ class FundraiserController extends Controller
         
         $fund->save();
         
-        $request->fundraiser_id = $fund->id;
+        $request->fundraiser = $fund->id;
         
         $commentController = new CommentController();
         $commentController->store($request);
@@ -81,8 +81,7 @@ class FundraiserController extends Controller
         $drive = Fundraiser::findOrFail($id);
         $comments = Comment::where('fundraiser_id', $id)->get();
         $data = [$drive, $comments];
-//print_r($comments);        
-        //return view('fundraisers.show')->with('drive', $drive);
+//print_r($comments);
         return view('fundraisers.show')->with('data', $data);
     }
 
