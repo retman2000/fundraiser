@@ -74,6 +74,16 @@
 
     @yield('content')
 
+	<footer class="navbar navbar-inverse">
+		<div class="container">
+			<div style="color:#fff;text-align:center;margin-top:6px;">
+				A&G Solutions&copy;, LLC. All rights reserved.
+			</div>
+			<div style="color:#fff;text-align:center;">
+				Copyright {{date('Y')}}
+			</div>
+		</div>
+	</footer>
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
